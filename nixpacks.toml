@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ["nodejs-22_x", "pnpm"]
+
+[phases.install]
+cmds = ["pnpm install"]
+
+[phases.build]
+cmds = ["pnpm ui:build", "pnpm build"]
+
+[start]
+cmd = "pnpm clawdbot gateway --port $PORT --allow-unconfigured --token $GATEWAY_TOKEN --verbose"
